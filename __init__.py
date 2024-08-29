@@ -417,13 +417,14 @@ class UniversalADBExecutor:
                         **inputdict,
                     },
                 )
-            if debug:
-                try:
-                    stdout, stderr, returncode = (
+            stdout, stderr, returncode = (
                         returndata.stdout,
                         returndata.stderr,
                         returndata.returncode,
                     )
+            if debug:
+                try:
+
                     print("Returncode:", returncode)
                     stdoutput = (
                         stdout.decode("utf-8", errors="backslashreplace")
